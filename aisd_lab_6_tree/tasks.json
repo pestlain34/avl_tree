@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "cl.exe", // Используем компилятор MSVC (cl.exe)
+      "args": [
+        "/EHsc", // Включение обработки исключений C++
+        "main.cpp", // Ваш исходный файл
+        "/I C:/Users/Егор/Desktop/smfl/SFML-2.6.2/include", // Путь к папке с заголовочными файлами SFML
+        "/link",
+        "/LIBPATH:C:/Users/Егор/Desktop/smfl/SFML-2.6.2/lib", // Путь к папке с библиотеками SFML
+        "sfml-graphics.lib", // Линковка с библиотекой SFML Graphics
+        "sfml-window.lib", // Линковка с библиотекой SFML Window
+        "sfml-system.lib", // Линковка с библиотекой SFML System
+        "/OUT:TreeVisualization.exe" // Имя выходного файла
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [ "$msCompile" ], // Используется для обработки ошибок компилятора MSVC
+      "detail": "Сборка проекта с использованием MSVC"
+    }
+  ]
+}
